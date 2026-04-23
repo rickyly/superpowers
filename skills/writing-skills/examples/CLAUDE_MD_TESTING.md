@@ -1,6 +1,6 @@
 # Testing CLAUDE.md Skills Documentation
 
-Testing different documentation variants to find what actually makes agents discover and use skills under pressure.
+测试不同的文档变体，找出真正能让 agent 在压力下发现并使用 skill 的写法。
 
 ## Test Scenarios
 
@@ -64,7 +64,7 @@ B) Just refactor it - you know what you're doing
 ## Documentation Variants to Test
 
 ### NULL (Baseline - no skills doc)
-No mention of skills in CLAUDE.md at all.
+CLAUDE.md 中完全不提 skill。
 
 ### Variant A: Soft Suggestion
 ```markdown
@@ -134,56 +134,56 @@ Start here: `skills/using-skills`
 
 ## Testing Protocol
 
-For each variant:
+对每个变体：
 
-1. **Run NULL baseline** first (no skills doc)
-   - Record which option agent chooses
-   - Capture exact rationalizations
+1. **先跑 NULL 基线**（无 skill 文档）
+   - 记录 agent 选了哪个选项
+   - 逐字捕获合理化说辞
 
-2. **Run variant** with same scenario
-   - Does agent check for skills?
-   - Does agent use skills if found?
-   - Capture rationalizations if violated
+2. **用同样的场景跑变体**
+   - agent 会主动检查 skill 吗？
+   - 如果找到 skill，会使用吗？
+   - 如果违反，捕获合理化说辞
 
-3. **Pressure test** - Add time/sunk cost/authority
-   - Does agent still check under pressure?
-   - Document when compliance breaks down
+3. **压力测试** —— 加入时间/沉没成本/权威
+   - agent 在压力下还会检查吗？
+   - 记录遵守在哪里崩溃
 
-4. **Meta-test** - Ask agent how to improve doc
+4. **元测试** —— 让 agent 给出改进文档的建议
    - "You had the doc but didn't check. Why?"
    - "How could doc be clearer?"
 
 ## Success Criteria
 
-**Variant succeeds if:**
-- Agent checks for skills unprompted
-- Agent reads skill completely before acting
-- Agent follows skill guidance under pressure
-- Agent can't rationalize away compliance
+**变体成功的标志：**
+- agent 未经提示就检查 skill
+- agent 在行动前完整阅读 skill
+- agent 在压力下遵守 skill 指导
+- agent 无法把遵守合理化掉
 
-**Variant fails if:**
-- Agent skips checking even without pressure
-- Agent "adapts the concept" without reading
-- Agent rationalizes away under pressure
-- Agent treats skill as reference not requirement
+**变体失败的标志：**
+- 即便没有压力，agent 也跳过检查
+- agent 不读就"改造概念"
+- agent 在压力下把遵守合理化掉
+- agent 把 skill 当作参考而非要求
 
 ## Expected Results
 
-**NULL:** Agent chooses fastest path, no skill awareness
+**NULL：** agent 选最快路径，对 skill 无意识
 
-**Variant A:** Agent might check if not under pressure, skips under pressure
+**Variant A：** 没压力时 agent 可能会检查，有压力时会跳过
 
-**Variant B:** Agent checks sometimes, easy to rationalize away
+**Variant B：** agent 有时会检查，容易被合理化掉
 
-**Variant C:** Strong compliance but might feel too rigid
+**Variant C：** 遵守很强，但可能显得过于死板
 
-**Variant D:** Balanced, but longer - will agents internalize it?
+**Variant D：** 平衡，但更长——agent 能内化吗？
 
 ## Next Steps
 
-1. Create subagent test harness
-2. Run NULL baseline on all 4 scenarios
-3. Test each variant on same scenarios
-4. Compare compliance rates
-5. Identify which rationalizations break through
-6. Iterate on winning variant to close holes
+1. 构建 subagent 测试骨架
+2. 在所有 4 个场景上跑 NULL 基线
+3. 在相同场景上测试每个变体
+4. 对比遵守率
+5. 找出哪些合理化说辞能突破
+6. 针对胜出的变体迭代堵上漏洞

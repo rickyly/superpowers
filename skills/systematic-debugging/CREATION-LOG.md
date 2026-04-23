@@ -1,119 +1,133 @@
-# Creation Log: Systematic Debugging Skill
+# 创建日志：Systematic Debugging Skill
 
-Reference example of extracting, structuring, and bulletproofing a critical skill.
+这是从零提炼、组织并加固一个关键 skill 的参考示例。
 
-## Source Material
+## 源材料
 
-Extracted debugging framework from `/Users/jesse/.claude/CLAUDE.md`:
-- 4-phase systematic process (Investigation → Pattern Analysis → Hypothesis → Implementation)
-- Core mandate: ALWAYS find root cause, NEVER fix symptoms
-- Rules designed to resist time pressure and rationalization
+从 `/Users/jesse/.claude/CLAUDE.md` 中提炼出调试框架：
 
-## Extraction Decisions
+- 4 阶段系统化流程（Investigation → Pattern Analysis → Hypothesis → Implementation）
+- 核心要求：ALWAYS 找到 root cause，NEVER 修症状
+- 规则设计为能够抵抗时间压力和自我合理化
 
-**What to include:**
-- Complete 4-phase framework with all rules
-- Anti-shortcuts ("NEVER fix symptom", "STOP and re-analyze")
-- Pressure-resistant language ("even if faster", "even if I seem in a hurry")
-- Concrete steps for each phase
+## 提炼决策
 
-**What to leave out:**
-- Project-specific context
-- Repetitive variations of same rule
-- Narrative explanations (condensed to principles)
+**要纳入的内容**：
 
-## Structure Following skill-creation/SKILL.md
+- 完整的 4 阶段框架及全部规则
+- 反捷径的表述（「NEVER 修症状」「STOP 并重新分析」）
+- 抗压表述（「哪怕这样更快」「哪怕我看起来很赶」）
+- 每个阶段的具体步骤
 
-1. **Rich when_to_use** - Included symptoms and anti-patterns
-2. **Type: technique** - Concrete process with steps
-3. **Keywords** - "root cause", "symptom", "workaround", "debugging", "investigation"
-4. **Flowchart** - Decision point for "fix failed" → re-analyze vs add more fixes
-5. **Phase-by-phase breakdown** - Scannable checklist format
-6. **Anti-patterns section** - What NOT to do (critical for this skill)
+**要舍弃的内容**：
 
-## Bulletproofing Elements
+- 项目特定的上下文
+- 同一规则的重复变体
+- 叙事化的解释（压缩为原则）
 
-Framework designed to resist rationalization under pressure:
+## 依 skill-creation/SKILL.md 的结构
 
-### Language Choices
-- "ALWAYS" / "NEVER" (not "should" / "try to")
-- "even if faster" / "even if I seem in a hurry"
-- "STOP and re-analyze" (explicit pause)
-- "Don't skip past" (catches the actual behavior)
+1. **丰富的 when_to_use**——包含症状和反模式
+2. **类型：technique**——具体的流程，带步骤
+3. **关键词**——「root cause」「symptom」「workaround」「debugging」「investigation」
+4. **流程图**——「修复失败了」的决策点 → 重新分析 vs 再加修复
+5. **按阶段拆解**——便于扫读的 checklist 格式
+6. **反模式章节**——不该做什么（对这个 skill 至关重要）
 
-### Structural Defenses
-- **Phase 1 required** - Can't skip to implementation
-- **Single hypothesis rule** - Forces thinking, prevents shotgun fixes
-- **Explicit failure mode** - "IF your first fix doesn't work" with mandatory action
-- **Anti-patterns section** - Shows exactly what shortcuts look like
+## 加固要素
 
-### Redundancy
-- Root cause mandate in overview + when_to_use + Phase 1 + implementation rules
-- "NEVER fix symptom" appears 4 times in different contexts
-- Each phase has explicit "don't skip" guidance
+整个框架被设计为在压力下仍能抵抗自我合理化：
 
-## Testing Approach
+### 表述选择
 
-Created 4 validation tests following skills/meta/testing-skills-with-subagents:
+- 「ALWAYS」/「NEVER」（而不是「应该」/「尽量」）
+- 「哪怕这样更快」/「哪怕我看起来很赶」
+- 「STOP 并重新分析」（显式暂停）
+- 「不要跳过」（直指真实行为）
 
-### Test 1: Academic Context (No Pressure)
-- Simple bug, no time pressure
-- **Result:** Perfect compliance, complete investigation
+### 结构性防线
 
-### Test 2: Time Pressure + Obvious Quick Fix
-- User "in a hurry", symptom fix looks easy
-- **Result:** Resisted shortcut, followed full process, found real root cause
+- **强制 Phase 1**——无法直接跳到实施
+- **单一假设规则**——强迫思考，避免「霰弹枪式」修复
+- **显式的失败路径**——「如果你的第一个修复不奏效」带强制动作
+- **反模式章节**——具体展示捷径是什么样子
 
-### Test 3: Complex System + Uncertainty
-- Multi-layer failure, unclear if can find root cause
-- **Result:** Systematic investigation, traced through all layers, found source
+### 冗余
 
-### Test 4: Failed First Fix
-- Hypothesis doesn't work, temptation to add more fixes
-- **Result:** Stopped, re-analyzed, formed new hypothesis (no shotgun)
+- 「找 root cause」的要求出现在 overview、when_to_use、Phase 1、实施规则里
+- 「NEVER 修症状」在不同上下文中出现了 4 次
+- 每个阶段都有明确的「不要跳过」指引
 
-**All tests passed.** No rationalizations found.
+## 测试方法
 
-## Iterations
+按照 skills/meta/testing-skills-with-subagents 的做法，创建了 4 个验证测试：
 
-### Initial Version
-- Complete 4-phase framework
-- Anti-patterns section
-- Flowchart for "fix failed" decision
+### Test 1：学术场景（无压力）
 
-### Enhancement 1: TDD Reference
-- Added link to skills/testing/test-driven-development
-- Note explaining TDD's "simplest code" ≠ debugging's "root cause"
-- Prevents confusion between methodologies
+- 简单 bug，没有时间压力
+- **结果**：完全遵守流程，调查完整
 
-## Final Outcome
+### Test 2：时间压力 + 明显的快速修复
 
-Bulletproof skill that:
-- ✅ Clearly mandates root cause investigation
-- ✅ Resists time pressure rationalization
-- ✅ Provides concrete steps for each phase
-- ✅ Shows anti-patterns explicitly
-- ✅ Tested under multiple pressure scenarios
-- ✅ Clarifies relationship to TDD
-- ✅ Ready for use
+- 用户「很赶」，症状修复看起来很容易
+- **结果**：抵住了捷径诱惑，走完整个流程，找到真正的 root cause
 
-## Key Insight
+### Test 3：复杂系统 + 不确定性
 
-**Most important bulletproofing:** Anti-patterns section showing exact shortcuts that feel justified in the moment. When Claude thinks "I'll just add this one quick fix", seeing that exact pattern listed as wrong creates cognitive friction.
+- 多层失败，不确定能否找到 root cause
+- **结果**：系统化调查，逐层追踪，找到源头
 
-## Usage Example
+### Test 4：第一次修复失败
 
-When encountering a bug:
-1. Load skill: skills/debugging/systematic-debugging
-2. Read overview (10 sec) - reminded of mandate
-3. Follow Phase 1 checklist - forced investigation
-4. If tempted to skip - see anti-pattern, stop
-5. Complete all phases - root cause found
+- 假设不成立，有诱惑再加更多修复
+- **结果**：停下来、重新分析、形成新假设（没有霰弹枪式乱打）
 
-**Time investment:** 5-10 minutes
-**Time saved:** Hours of symptom-whack-a-mole
+**全部测试通过。** 没有发现自我合理化行为。
+
+## 迭代
+
+### 初版
+
+- 完整的 4 阶段框架
+- 反模式章节
+- 「修复失败」决策的流程图
+
+### 增强 1：TDD 引用
+
+- 加入对 skills/testing/test-driven-development 的链接
+- 说明 TDD 的「最简代码」≠ 调试的「root cause」
+- 避免两种方法论被混淆
+
+## 最终成果
+
+一个加固完毕的 skill：
+
+- ✅ 明确要求做 root cause 调查
+- ✅ 能抵抗时间压力的自我合理化
+- ✅ 为每个阶段提供了具体步骤
+- ✅ 显式展示反模式
+- ✅ 在多种压力场景下经过测试
+- ✅ 厘清与 TDD 的关系
+- ✅ 可以上线使用
+
+## 关键洞察
+
+**最关键的加固手段**：反模式章节，列出了在当下会觉得「很合理」的那些确切捷径。当 Claude 想到「我就加这一个快速修复」时，看到这个 pattern 正好被列为错误做法，会产生认知摩擦。
+
+## 使用示例
+
+遇到 bug 时：
+
+1. 加载 skill：skills/debugging/systematic-debugging
+2. 读 overview（10 秒）——提醒核心要求
+3. 按 Phase 1 的 checklist 走——被迫做调查
+4. 想走捷径时——看到反模式就停下
+5. 走完所有阶段——找到 root cause
+
+**时间投入**：5–10 分钟
+**节省时间**：几个小时的「打地鼠」
 
 ---
 
-*Created: 2025-10-03*
-*Purpose: Reference example for skill extraction and bulletproofing*
+*创建于：2025-10-03*
+*用途：用于 skill 提炼与加固的参考示例*

@@ -1,10 +1,10 @@
-# Spec Document Reviewer Prompt Template
+# Spec 文档审阅者 Prompt 模板
 
-Use this template when dispatching a spec document reviewer subagent.
+在派发 spec 文档审阅 subagent 时使用该模板。
 
-**Purpose:** Verify the spec is complete, consistent, and ready for implementation planning.
+**目的：** 验证 spec 完整、一致，且已准备好进入实现计划阶段。
 
-**Dispatch after:** Spec document is written to docs/superpowers/specs/
+**派发时机：** spec 文档被写入 docs/superpowers/specs/ 之后
 
 ```
 Task tool (general-purpose):
@@ -46,4 +46,4 @@ Task tool (general-purpose):
     - [suggestions for improvement]
 ```
 
-**Reviewer returns:** Status, Issues (if any), Recommendations
+**审阅者返回：** Status、Issues（若有）、Recommendations

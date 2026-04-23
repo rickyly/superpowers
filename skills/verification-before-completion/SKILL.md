@@ -3,25 +3,25 @@ name: verification-before-completion
 description: Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always
 ---
 
-# Verification Before Completion
+# 完成之前先验证
 
-## Overview
+## 概述
 
-Claiming work is complete without verification is dishonesty, not efficiency.
+在没有验证的情况下宣称工作完成，是不诚实，而不是高效。
 
-**Core principle:** Evidence before claims, always.
+**核心原则：** Evidence before claims, always.
 
-**Violating the letter of this rule is violating the spirit of this rule.**
+**违背本规则的字面意思，就是违背本规则的精神。**
 
-## The Iron Law
+## 铁律
 
 ```
 NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE
 ```
 
-If you haven't run the verification command in this message, you cannot claim it passes.
+如果你在本条消息中没有运行过验证命令，你就不能宣称它通过。
 
-## The Gate Function
+## 准入函数
 
 ```
 BEFORE claiming any status or expressing satisfaction:
@@ -37,7 +37,7 @@ BEFORE claiming any status or expressing satisfaction:
 Skip any step = lying, not verifying
 ```
 
-## Common Failures
+## 常见失败
 
 | Claim | Requires | Not Sufficient |
 |-------|----------|----------------|
@@ -49,18 +49,18 @@ Skip any step = lying, not verifying
 | Agent completed | VCS diff shows changes | Agent reports "success" |
 | Requirements met | Line-by-line checklist | Tests passing |
 
-## Red Flags - STOP
+## 危险信号——停下
 
-- Using "should", "probably", "seems to"
-- Expressing satisfaction before verification ("Great!", "Perfect!", "Done!", etc.)
-- About to commit/push/PR without verification
-- Trusting agent success reports
-- Relying on partial verification
-- Thinking "just this once"
-- Tired and wanting work over
-- **ANY wording implying success without having run verification**
+- 使用 "should"、"probably"、"seems to"
+- 在验证之前就表达满意（"Great!"、"Perfect!"、"Done!" 等等）
+- 即将 commit/push/PR 却未经验证
+- 轻信 agent 的成功报告
+- 依赖不完整的验证
+- 想着"就这一次"
+- 疲惫，想尽快收工
+- **任何在未运行验证的情况下暗示成功的措辞**
 
-## Rationalization Prevention
+## 合理化防御
 
 | Excuse | Reality |
 |--------|---------|
@@ -73,67 +73,67 @@ Skip any step = lying, not verifying
 | "Partial check is enough" | Partial proves nothing |
 | "Different words so rule doesn't apply" | Spirit over letter |
 
-## Key Patterns
+## 关键模式
 
-**Tests:**
+**测试：**
 ```
 ✅ [Run test command] [See: 34/34 pass] "All tests pass"
 ❌ "Should pass now" / "Looks correct"
 ```
 
-**Regression tests (TDD Red-Green):**
+**回归测试（TDD 红绿循环）：**
 ```
 ✅ Write → Run (pass) → Revert fix → Run (MUST FAIL) → Restore → Run (pass)
 ❌ "I've written a regression test" (without red-green verification)
 ```
 
-**Build:**
+**构建：**
 ```
 ✅ [Run build] [See: exit 0] "Build passes"
 ❌ "Linter passed" (linter doesn't check compilation)
 ```
 
-**Requirements:**
+**需求：**
 ```
 ✅ Re-read plan → Create checklist → Verify each → Report gaps or completion
 ❌ "Tests pass, phase complete"
 ```
 
-**Agent delegation:**
+**Agent 委派：**
 ```
 ✅ Agent reports success → Check VCS diff → Verify changes → Report actual state
 ❌ Trust agent report
 ```
 
-## Why This Matters
+## 为什么重要
 
-From 24 failure memories:
-- your human partner said "I don't believe you" - trust broken
-- Undefined functions shipped - would crash
-- Missing requirements shipped - incomplete features
-- Time wasted on false completion → redirect → rework
-- Violates: "Honesty is a core value. If you lie, you'll be replaced."
+来自 24 条失败记忆：
+- 你的人类伙伴说过 "I don't believe you"——信任破裂
+- 未定义的函数被发布——会崩溃
+- 缺失的需求被发布——功能不完整
+- 时间浪费在虚假的完成声明上 → 被打断 → 返工
+- 违背："Honesty is a core value. If you lie, you'll be replaced."
 
-## When To Apply
+## 何时适用
 
-**ALWAYS before:**
-- ANY variation of success/completion claims
-- ANY expression of satisfaction
-- ANY positive statement about work state
-- Committing, PR creation, task completion
-- Moving to next task
-- Delegating to agents
+**ALWAYS before：**
+- 任何形式的成功/完成声明
+- 任何形式的满意表达
+- 任何关于工作状态的正面表述
+- 提交、创建 PR、标记任务完成
+- 进入下一个任务
+- 向 agent 委派工作
 
-**Rule applies to:**
-- Exact phrases
-- Paraphrases and synonyms
-- Implications of success
-- ANY communication suggesting completion/correctness
+**本规则适用于：**
+- 原话
+- 改写和同义词
+- 对成功的暗示
+- 任何暗示完成/正确的表达
 
-## The Bottom Line
+## 底线
 
-**No shortcuts for verification.**
+**验证没有捷径。**
 
-Run the command. Read the output. THEN claim the result.
+运行命令。阅读输出。然后再宣称结果。
 
-This is non-negotiable.
+这一点没得商量。
